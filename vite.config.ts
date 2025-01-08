@@ -6,7 +6,6 @@ import dts from 'vite-plugin-dts'
 const root = process.platform === 'win32' ? resolve('/') : '/'
 const external = (id: string) => !id.startsWith('.') && !id.startsWith(root)
 
-// https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), dts({ include: ['lib'], tsconfigPath: './tsconfig.app.json' })],
   build: {
